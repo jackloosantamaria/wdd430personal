@@ -108,10 +108,15 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
 }
 
 export async function deleteInvoice(id: string) {
-  await sql `
-    DELETE FROM invoices WHERE id = ${id}
-  `;
-  revalidatePath('/dashboard/invoices');
+  try {
+    await sql`
+      DELETE FROM invoices WHERE id = ${id}
+    `;
+    revalidatePath('/dashboard/invoices');
+  } catch (error) {
+    console.error('Error deleting invoice:', error);
+    throw new Error('Failed to delete invoice');
+  }
 }
 
 export async function authenticate(
@@ -131,4 +136,6 @@ export async function authenticate(
     }
     throw error;
   }
+
+
 }
