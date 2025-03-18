@@ -95,6 +95,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 //   );
 // }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function PaginationArrow({
   href,
   direction,
