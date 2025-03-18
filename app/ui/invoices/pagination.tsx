@@ -6,6 +6,7 @@ import Link from 'next/link';
 //import { generatePagination } from '@/app/lib/utils';
 //import { usePathname, useSearchParams } from 'next/navigation';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function Pagination({ totalPages }: { totalPages: number }) {
   // NOTE: Uncomment this code in Chapter 11
 
